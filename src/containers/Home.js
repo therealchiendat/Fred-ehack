@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import getData from "../components/APIClient";
-import {Map, InfoWindow, Marker, GoogleApiWrapper,Polyline} from 'google-maps-react';
 import { makeStyles } from '@material-ui/core/styles';
-import api from './Resources/sensitive/api.json';
 import {Paper, InputBase, IconButton, List, ListItem, ListItemText, ListItemLink} from '@material-ui/core/';
 import MapComponent from './Map.js';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -54,13 +51,6 @@ export class Home extends React.Component {
         venueData: {}
 		};
   }
-  componentWillMount(){
-    getData("Gyms").then((data)=>{
-      this.setState({venueData: data.features});
-      console.log(this.state["venueData"]);
-    });
-  }
-
 
   render() {
     const mapstyle = {
@@ -105,7 +95,7 @@ export class Home extends React.Component {
           google={this.props.google}
           onClick={this.onMapClicked}
           zoom={10}
-          initialCenter={{ lat: 45.9299084, lng: -66.6647803 }}
+          venuedata={this.state.venueData}
         />
         </div>
       </div>
