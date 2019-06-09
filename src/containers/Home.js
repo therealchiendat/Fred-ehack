@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import getData from "../components/APIClient";
 import {Map, InfoWindow, Marker, GoogleApiWrapper,Polyline} from 'google-maps-react';
 import { makeStyles } from '@material-ui/core/styles';
 import api from './Resources/sensitive/api.json';
@@ -49,8 +50,15 @@ export class Home extends React.Component {
         showingInfoWindow: false,
         activeMarker: {},
         selectedPlace: {},
+        venueData: {}
 		};
-	}
+  }
+  componentWillMount(){
+    getData("Gyms").then((data)=>{
+      this.setState({venueData: data.features});
+      console.log(this.state["venueData"]);
+    });
+  }
 
 
   render() {
@@ -60,14 +68,14 @@ export class Home extends React.Component {
       position: 'relative',
     }
     return (
-      <div container  className='Home'>
+      <div  className='Home'>
         <div className='Searchsection'
           style={{
-            'background-color':'white',
-            'margin-bottom':'20px',
+            'backgroundColor':'white',
+            'marginBottom':'20px',
             'padding':'20px',
-            'border-radius':'10px',
-            'box-shadow': '0 4px 4px 0 rgba(0,0,0,0.1)'}}>
+            'borderRadius':'10px',
+            'boxShadow': '0 4px 4px 0 rgba(0,0,0,0.1)'}}>
           <SearchComponent />
           <List>
             <ListItem button>
@@ -84,13 +92,13 @@ export class Home extends React.Component {
         </div>
         <div
         style={{
-          'background-color':'white',
+          'backgroundColor':'white',
           'width': 'auto',
           'position': 'relative',
           'height': '80vh',
-          'padding-top':'20px',
-          'border-radius':'10px',
-          'box-shadow': '0 4px 4px 0 rgba(0,0,0,0.1)'}}
+          'paddingTop':'20px',
+          'borderRadius':'10px',
+          'boxShadow': '0 4px 4px 0 rgba(0,0,0,0.1)'}}
         >
         <Map
             style={mapstyle}
