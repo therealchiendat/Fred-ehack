@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Map, InfoWindow, Marker, GoogleApiWrapper,Polyline} from 'google-maps-react';
 import api from "./Resources/sensitive/api.json";
-import trip0 from "./Resources/trips/2016-07-02--11-56-24.json";
+import trip0 from "./Resources/trips/2016-07-02--11-56-24.json"; // <-- Sample data import
 import trip1 from "./Resources/trips/2016-07-02--13-09-31.json";
 import "./Home.css";
 var i;
@@ -15,20 +15,7 @@ export class Home extends React.Component {
         selectedPlace: {},
 		};
 	}
-/*  rendertrip(coords){
-    return [{}].concat(coords).map(
-      (coords,i) =>
-        i!==0
-        ?
-          <Polyline
-              path=[{trip0.coords[i].lat,trip0.coords[i].lng},{trip0.coords[i+1].lat,trip0.coords[i+1].lng}]
-              strokeColor="#0000FF"
-              strokeOpacity={0.8}
-              strokeWeight={2}
-          />
-        :null
-    )
-  }*/
+
   heatMapColorforValue(value){
     var h = (40 - value)/40 * 150
     return "hsl(" + h + ", 100%, 50%)";
