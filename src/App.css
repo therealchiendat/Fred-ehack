@@ -1,7 +1,31 @@
 .App {
   margin-top: 15px;
+
 }
 
 .App .navbar-brand {
   font-weight: bold;
+}
+
+.App .navbar {
+ background-color: white;
+ box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1);
+ /*
+ -webkit-animation: welcome 2s infinite;
+ -webkit-annimation-delay: 1s;
+ animation: welcome 2s infinite;
+ animation-delay: 2s;*/
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes welcome {
+  0% {background-color: white;}
+  50% {background-color: grey;}
+  100% {background-color: white;}
+}
+
+@keyframes welcome{
+  0% {background-color: white;}
+  50% {background-color: grey;}
+  100% {background-color: white;}
 }
