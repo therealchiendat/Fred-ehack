@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {getEvents} from '../components/APIClient'
 import { makeStyles } from '@material-ui/core/styles';
 import {Paper, InputBase, IconButton, List, ListItem, ListItemText, ListItemLink} from '@material-ui/core/';
 import MapComponent from './Map.js';
@@ -48,8 +49,17 @@ export class Home extends React.Component {
         showingInfoWindow: false,
         activeMarker: {},
         selectedPlace: {},
-        venueData: {}
+        venueData: {},
+        events: []
 		};
+  }
+
+  componentWillMount(){
+    getEvents().then((data)=>{
+      this.setState({events: data});
+      console.log("event");
+      console.log(this.state["events"]);
+    });
   }
 
   render() {

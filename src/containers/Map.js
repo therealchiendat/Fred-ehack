@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import api from './Resources/sensitive/api.json'
-import getData from '../components/APIClient'
+import {getData} from '../components/APIClient'
 import parksList from './Resources/parks.json'
 import { Map, GoogleApiWrapper, Polygon, InfoWindow } from 'google-maps-react'
 

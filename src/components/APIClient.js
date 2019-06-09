@@ -49,4 +49,8 @@ const getData = (name) => {
     return fetch(endpoint.URL).then((data) => data.json()).then((data) =>  data);
 }
 
-export default getData;
+const getEvents = () => {
+    return fetch("http://spark.raydelto.org/events").then((data) => data.json()).then((data) =>  data.data);
+}
+
+export {getData ,getEvents};
