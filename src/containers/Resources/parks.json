@@ -1,0 +1,5 @@
+{"initialCoords": {"lat": 45.9634545, "lng": -66.6452886},
+"parks": [
+    {"name": "Odell Park 1", "title": "Odell park area 1", "fillColor": "#0000FF", "middle": {"lat": 45.9400, "lng": -66.6452886},"coords": [{"lat": 45.9400, "lng": -66.6660}, {"lat": 45.9490, "lng": -66.6610}, {"lat": 45.9490, "lng": -66.6690}]},
+    {"name": "Odell Park 2", "title": "Odell park area 1", "fillColor": "#9999AA", "middle": {"lat": 45.9500, "lng": -66.6650}, "coords": [{"lat": 45.9500, "lng": -66.6650}, {"lat": 45.9500, "lng": -66.6600}, {"lat": 45.9600, "lng": -66.6600}, {"lat": 45.9600, "lng": -66.6650}]}]
+}
