@@ -44,11 +44,10 @@ export class MapContainer extends Component {
         })}
         {parksList.parks.map(park => {
           console.log('park in map: ', park)
-          console.log('position dig', park.middle.lat)
-          console.log(park !== undefined)
+          console.log('lat: ', park.middle.lat, ', lng: ', park.middle.lng)
           return (
             <InfoWindow
-              visible={true}
+              visible={park !== undefined && park !== null}
               position={{ lat: park.middle.lat, lng: park.middle.lng }}>
               <div>
                 <h1>{park.title}</h1>
