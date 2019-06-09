@@ -4,7 +4,7 @@ import api from "./Resources/sensitive/api.json";
 import trip0 from "./Resources/trips/2016-07-02--11-56-24.json";
 import trip1 from "./Resources/trips/2016-07-02--13-09-31.json";
 import "./Home.css";
-var i;
+let i;
 export class Home extends React.Component {
 
   constructor(props) {
