@@ -6,11 +6,6 @@ import { Map, GoogleApiWrapper, Polygon, InfoWindow } from 'google-maps-react'
 export class MapContainer extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      showingInfoWindow: false,
-      activeMarker: {},
-      selectedPlace: {}
-    }
     this.clickPark = this.clickPark.bind(this)
   }
 
@@ -53,7 +48,7 @@ export class MapContainer extends Component {
           console.log(park !== undefined)
           return (
             <InfoWindow
-              visible={park !== undefined}
+              visible={true}
               position={{ lat: park.middle.lat, lng: park.middle.lng }}>
               <div>
                 <h1>{park.title}</h1>
