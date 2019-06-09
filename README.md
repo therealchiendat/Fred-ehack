@@ -1,3 +1,3 @@
-## dot.ai
+## Fred-ehack
 
-Visualizing Dash Cam data.
+When install, initialize using: ``npm install``
