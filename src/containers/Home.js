@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import getData from "../components/APIClient";
 import {Map, InfoWindow, Marker, GoogleApiWrapper,Polyline} from 'google-maps-react';
 import api from "./Resources/sensitive/api.json";
 import trip0 from "./Resources/trips/2016-07-02--11-56-24.json"; // <-- Sample data import
@@ -13,8 +14,15 @@ export class Home extends React.Component {
         showingInfoWindow: false,
         activeMarker: {},
         selectedPlace: {},
+        venueData: {}
 		};
-	}
+  }
+  componentWillMount(){
+    getData("Gyms").then((data)=>{
+      this.setState({venueData: data.features});
+      console.log(this.state["venueData"]);
+    });
+  }
 
   heatMapColorforValue(value){
     var h = (40 - value)/40 * 150
@@ -41,7 +49,6 @@ export class Home extends React.Component {
       coords.push({lat:trip0.coords[i].lat,lng:trip0.coords[i].lng});
       speed.push(this.heatMapColorforValue(trip0.coords[i].speed));
     }
-    console.log(speed[1])
     const style = {
       width: 'auto',
       height: '80vh',
@@ -49,7 +56,7 @@ export class Home extends React.Component {
     }
 
     return (
-      <div container style={style}>
+      <div style={style}>
       <Map google={this.props.google}
           onClick={this.onMapClicked}
           zoom={10}
