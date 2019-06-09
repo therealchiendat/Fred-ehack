@@ -71,7 +71,7 @@ export class MapContainer extends Component {
             <InfoWindow
               key={park.attributes.Name}
               visible={park !== undefined && park !== null}
-              position={{ lat: park.geometry.x, lng: park.geometry.y }}
+              position={{ lat: park.geometry.y, lng: park.geometry.x }}
               onClick={this.clickPark}>
               <div>
                 <h1>{park.attributes.Name}</h1>
