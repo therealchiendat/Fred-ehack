@@ -1,0 +1,14 @@
+AWS:
+ App Client:
+ 	name: fred-ehack
+	ID: 290ho63m3108jj73fsve46sdpb
+	Domain: fred-ehack.auth.us-east-1.amazoncognito.com
+
+
+ Userpool:
+	Pool ID: us-east-1_mFTSiMF9S
+	Pool ARN:arn:aws:cognito-idp:us-east-1:591083951986:userpool/us-east-1_mFTSiMF9S
+
+ Identity Pool:
+	name: fredehackpool
+	Identity pool ID: us-east-1:c92355d8-9623-43a4-8ab3-fa5103e034aa
