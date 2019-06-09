@@ -41,6 +41,7 @@ export class MapContainer extends Component {
           }
           return (
             <Polygon
+              key={park.title}
               name={park.name}
               title={park.title}
               paths={pathArray}
@@ -53,9 +54,10 @@ export class MapContainer extends Component {
             />
           )
         })}
-        {parksList.parks.map(park => {
+        {parksList.parks.map((park,i) => {
           return (
             <InfoWindow
+              key={i}
               visible={park !== undefined && park !== null}
               position={{ lat: park.middle.lat, lng: park.middle.lng }}>
               <div>
