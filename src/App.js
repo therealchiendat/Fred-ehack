@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Routes from "./Routes";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
+import { Fab } from "@material-ui/core"
 import "./App.css";
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
+            <Fab color="primary">Host</Fab>
             <NavItem href="#">Host Event</NavItem>
           </Nav>
         </Navbar.Collapse>
