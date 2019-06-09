@@ -4,6 +4,7 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper,Polyline} from 'google-maps-re
 import { makeStyles } from '@material-ui/core/styles';
 import api from './Resources/sensitive/api.json';
 import {Paper, InputBase, IconButton, List, ListItem, ListItemText, ListItemLink} from '@material-ui/core/';
+import MapComponent from './Map.js';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import './Home.css';
@@ -100,19 +101,16 @@ export class Home extends React.Component {
           'borderRadius':'10px',
           'boxShadow': '0 4px 4px 0 rgba(0,0,0,0.1)'}}
         >
-        <Map
-            style={mapstyle}
-            google={this.props.google}
-            onClick={this.onMapClicked}
-            zoom={10}
-            initialCenter= {{lat:45.9299084,lng:-66.6647803}}
-            >
-        </Map>
+        <MapComponent
+          google={this.props.google}
+          onClick={this.onMapClicked}
+          zoom={10}
+          initialCenter={{ lat: 45.9299084, lng: -66.6647803 }}
+        />
         </div>
       </div>
     )
   }
 }
- export default GoogleApiWrapper({
-   apiKey: api.name
- })(Home)
+
+export default Home
